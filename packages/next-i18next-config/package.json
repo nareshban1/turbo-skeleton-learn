@@ -1,9 +1,0 @@
-{
-    "name": "@repo/next-i18next-config",
-    "version": "0.0.0",
-    "private": true,
-    "files": [
-      "next-i18next-config.js"
-    ]
-
-  }
