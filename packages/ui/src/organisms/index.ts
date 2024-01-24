@@ -1,2 +1,4 @@
 import Card from "./Card"
-export {Card }
+import Modal from "./Modal"
+
+export {Card,Modal }

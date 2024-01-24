@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const getAllWeapons = async () => {
   'use server';
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -14,7 +16,11 @@ const AllWeapons = async () => {
   return (
     <section>
       <h1 className="font-bold text-xl">Weapons</h1>
-      {allWeapons?.data?.map((weapon) => <h2>{weapon.displayName}</h2>)}
+      {allWeapons?.data?.map((weapon) => (
+        <Link key={weapon.uuid} href={`weapon/${weapon.uuid}`}>
+          {weapon.displayName}
+        </Link>
+      ))}
     </section>
   );
 };
