@@ -1,19 +1,14 @@
 'use client';
 
-import { Button } from '@repo/ui';
-import './globals.css';
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ReactNode, useState } from 'react';
-import Link from 'next/link';
+import { ReactNode } from 'react';
+import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
   agents,
   weapons,
-  maps,
-  modal,
 }: {
   children: ReactNode;
   agents: ReactNode;
@@ -27,7 +22,6 @@ export default function RootLayout({
         <main className="w-full  flex flex-col max-w-7xl mx-auto">
           {children}
           Valorant
-          {modal}
           <section className="flex w-full">
             <div className="bg-red-200 w-1/2">{agents}</div>
             <div className="bg-orange-200 w-1/2">{weapons}</div>

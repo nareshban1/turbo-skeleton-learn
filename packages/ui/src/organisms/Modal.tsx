@@ -2,18 +2,18 @@ import { Dialog } from '@headlessui/react';
 
 const Modal = ({
   isOpen,
-  setIsOpen,
+  toggleModal,
 }: {
   isOpen: boolean;
-  setIsOpen: (value: boolean) => void;
+  toggleModal: () => void;
 }) => {
   return (
-    <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+    <Dialog open={isOpen} onClose={() => toggleModal()}>
       <Dialog.Panel>
         <Dialog.Title>Title</Dialog.Title>
         <Dialog.Description>Description</Dialog.Description>
-        <button onClick={() => setIsOpen(false)}>Deactivate</button>
-        <button onClick={() => setIsOpen(false)}>Cancel</button>
+        <button onClick={() => toggleModal()}>Deactivate</button>
+        <button onClick={() => toggleModal()}>Cancel</button>
       </Dialog.Panel>
     </Dialog>
   );

@@ -5,7 +5,7 @@ import { ReactNode } from 'react';
 interface ButtonProps {
   children: ReactNode;
   className?: string;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: () => void;
 }
 
 const Button = ({ children, className, onClick }: ButtonProps) => {
@@ -15,7 +15,7 @@ const Button = ({ children, className, onClick }: ButtonProps) => {
       onClick={(e) => {
         if (onClick) {
           e.preventDefault();
-          onClick(e);
+          onClick();
         }
       }}
     >
