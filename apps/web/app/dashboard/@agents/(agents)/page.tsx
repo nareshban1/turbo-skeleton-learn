@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const getAllAgents = async () => {
   'use server';
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -14,10 +16,18 @@ const AllAgents = async () => {
   return (
     <section>
       <h1 className="font-bold text-xl">Agents</h1>
-      <div>
+      <div className="flex flex-col">
         {allAgents?.data
           ?.filter((agent) => agent.isPlayableCharacter)
-          .map((agent) => <h2 key={agent.uuid}>{agent.displayName}</h2>)}
+          .map((agent) => (
+            <Link
+              className="bg-gray-300 w-auto p-1 my-1"
+              href={`agent/${agent.uuid}`}
+              key={agent.uuid}
+            >
+              {agent.displayName}
+            </Link>
+          ))}
       </div>
     </section>
   );

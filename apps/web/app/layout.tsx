@@ -7,25 +7,17 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
-  agents,
-  weapons,
-}: {
+}: Readonly<{
   children: ReactNode;
-  agents: ReactNode;
-  maps: ReactNode;
-  weapons: ReactNode;
-  modal: ReactNode;
-}): JSX.Element {
+}>): JSX.Element {
   return (
     <html lang="en">
       <body className={`${inter.className} p-3 bg-gray-200 `}>
         <main className="w-full  flex flex-col max-w-7xl mx-auto">
+          <h1 className="text-2xl font-bold my-3">
+            Learning Next Js 14 Features
+          </h1>
           {children}
-          Valorant
-          <section className="flex w-full">
-            <div className="bg-red-200 w-1/2">{agents}</div>
-            <div className="bg-orange-200 w-1/2">{weapons}</div>
-          </section>
         </main>
       </body>
     </html>

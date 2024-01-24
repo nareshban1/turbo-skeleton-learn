@@ -1,14 +1,16 @@
-import React from 'react';
+import Link from 'next/link';
 
 const RootPage = async () => {
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   await delay(2000);
   return (
     <div>
-      Issues with parallel routing since the doc mentioned that we could have
-      independent loading for each slots but loading for the first folder seems
-      to take the loading of root, But seems to work with using a workaround of
-      using route groups
+      <Link href="/dashboard" className="bg-green-300 p-1 mr-3">
+        Go to parallel route test
+      </Link>
+      <Link href="/layout" className="bg-orange-300 p-1">
+        Go to layout test
+      </Link>
     </div>
   );
 };
