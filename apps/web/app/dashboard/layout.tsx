@@ -1,5 +1,4 @@
-import React, { ReactNode } from 'react';
-
+import { ReactNode } from 'react';
 const DashboardLayout = ({
   children,
   agents,
@@ -14,6 +13,7 @@ const DashboardLayout = ({
   return (
     <div>
       <h1 className="text-2xl font-bold my-3">Valorant</h1>
+
       {modal}
       {children}
       <section className="flex w-full py-3 gap-4">

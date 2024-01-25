@@ -1,10 +1,13 @@
 'use client';
 
+import { Amplify } from 'aws-amplify';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
 import './globals.css';
+import config from '../../../aws-exports';
 const inter = Inter({ subsets: ['latin'] });
 
+Amplify.configure({ ...config }, { ssr: true });
 export default function RootLayout({
   children,
 }: Readonly<{

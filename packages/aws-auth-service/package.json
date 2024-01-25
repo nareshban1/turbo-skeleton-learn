@@ -1,0 +1,8 @@
+{
+  "name": "@repo/aws-auth-service",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "authService.js"
+  ]
+}
