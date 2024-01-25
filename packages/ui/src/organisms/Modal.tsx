@@ -1,19 +1,20 @@
 import { Dialog } from '@headlessui/react';
+import { ReactNode } from 'react';
 
 const Modal = ({
   isOpen,
   toggleModal,
+  children,
 }: {
   isOpen: boolean;
   toggleModal: () => void;
+  children: ReactNode;
 }) => {
   return (
     <Dialog open={isOpen} onClose={() => toggleModal()}>
       <Dialog.Panel>
         <Dialog.Title>Title</Dialog.Title>
-        <Dialog.Description>Description</Dialog.Description>
-        <button onClick={() => toggleModal()}>Deactivate</button>
-        <button onClick={() => toggleModal()}>Cancel</button>
+        {children}
       </Dialog.Panel>
     </Dialog>
   );

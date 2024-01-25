@@ -1,9 +1,19 @@
 import { Modal } from './modal';
-
-export default function WeaponModal({
+const getAgentDetail = async (weaponId: string) => {
+  'use server';
+  const { signal } = new AbortController();
+  const res = await fetch(`https://valorant-api.com/v1/agents/${weaponId}`, {
+    signal,
+    cache: 'no-cache',
+  });
+  const data = await res.json();
+  return data;
+};
+export default async function AgentModalPage({
   params: { id },
 }: Readonly<{
   params: { id: string };
 }>) {
-  return <Modal>{id}</Modal>;
+  const agent = await getAgentDetail(id);
+  return <Modal>{JSON.stringify(agent)}</Modal>;
 }
