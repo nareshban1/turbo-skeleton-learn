@@ -1,3 +1,1 @@
-import { signIn, signUp, signOut, confirmSignUp } from 'aws-amplify/auth';
-
-export { signIn, signOut, signUp, confirmSignUp };
+export * from 'aws-amplify/auth';
